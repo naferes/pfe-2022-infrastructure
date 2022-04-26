@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notification-ms
+  template:
+    metadata:
+      labels:
+        app: notification-ms
+    spec:
+      containers:
+      - name: notification-ms
+        image: 12011/notifications:4rd
+        ports:
+        - name: notif-port
+          containerPort: 8090
+        imagePullPolicy: Always
+        env:
+          - name: spring.cloud.config.uri
+            value: http://config-server-service:2001
+          - name: spring.profiles.active
+            value: local

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assessment-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assessment-ms
+  template:
+    metadata:
+      labels:
+        app: assessment-ms
+    spec:
+      containers:
+      - name: assessment-ms
+        image: 12011/assessement:11th
+        ports:
+        - name: assess-ms-port
+          containerPort: 8094
+        imagePullPolicy: Always
+        env:
+          - name: spring.cloud.config.uri
+            value: http://config-server-service:2001
+          - name: spring.profiles.active
+            value: local

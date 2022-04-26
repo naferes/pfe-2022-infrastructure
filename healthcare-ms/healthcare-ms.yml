@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthcare-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthcare-ms
+  template:
+    metadata:
+      labels:
+        app: healthcare-ms
+    spec:
+      containers:
+      - name: healthcare-ms
+        image: 12011/healthcare:first
+        ports:
+        - name: healthcare-port
+          containerPort: 8092
+        imagePullPolicy: Always
+        env:
+          - name: spring.cloud.config.uri
+            value: http://config-server-service:2001
+          - name: spring.profiles.active
+            value: local

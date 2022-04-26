@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthcare-facility-service
+spec:
+  ports: 
+  - port: 8093
+    protocol: TCP
+  selector:
+    app: healthcare-facility-ms
+  type: ClusterIP
