@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: config-server-service
+  name: config-server-service-dev
 spec:
   ports: 
   - port: 2001

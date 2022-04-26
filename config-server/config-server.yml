@@ -20,6 +20,6 @@ spec:
           containerPort: 2001
         env:
           - name: spring.boot.admin.client.uri
-            value: http://config-server-service:2003
+            value: http://config-server-service-dev:2003
 
 

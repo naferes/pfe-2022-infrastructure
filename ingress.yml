@@ -6,63 +6,63 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
-    - host: oauth.info
+    - host: dev.oauth.info
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: oauth-ms-service
+                name: oauth-ms-service-dev
                 port:
                   number: 2000
-    - host: assessment.info
+    - host: dev.assessment.info
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: assessment-ms-service
+                name: assessment-ms-service-dev
                 port:
                   number: 8094
-    - host: config-server.info
+    - host: dev.config-server.info
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: config-server-service
+                name: config-server-service-dev
                 port:
                   number: 2001
-    - host: healthcare-facility.info
+    - host: dev.healthcare-facility.info
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: healthcare-facility-service
+                name: healthcare-facility-service-dev
                 port:
                   number: 8093
-    - host: healthcare.info
+    - host: dev.healthcare.info
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: healthcare-service
+                name: healthcare-service-dev
                 port:
                   number: 8092
-    - host: notifications.info
+    - host: dev.notifications.info
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: notification-service
+                name: notification-service-dev
                 port:
                   number: 8090
