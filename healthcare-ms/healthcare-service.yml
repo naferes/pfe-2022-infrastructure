@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: healthcare-service-dev
+  name: healthcare-service-int
 spec:
   ports: 
   - port: 8092

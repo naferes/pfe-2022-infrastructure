@@ -21,6 +21,6 @@ spec:
         imagePullPolicy: Always
         env:
           - name: spring.cloud.config.uri
-            value: http://config-server-service-dev:2001
+            value: http://config-server-service-int:2001
           - name: spring.profiles.active
-            value: dev
+            value: int

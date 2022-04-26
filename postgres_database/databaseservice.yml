@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: database-service-dev
+  name: database-service-int
 spec:
   ports: 
   - port: 5432

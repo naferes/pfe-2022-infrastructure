@@ -1,12 +1,12 @@
-create database medical_db_dev;
-\c medical_db_dev
-create user oauth2_ms_dev with password 'secret';
-create schema oauth2 authorization oauth2_ms_dev;
-create user healthcare_ms_dev with password 'secret';
-create schema healthcare authorization healthcare_ms_dev;
-create user healthcare_facility_ms_dev with password 'secret';
-create schema healthcare_facility authorization healthcare_facility_ms_dev;
-create user assessment_ms_dev with password 'secret';
-create schema assessment authorization assessment_ms_dev;
-create user notification_ms_dev with password 'secret';
-create schema notification authorization notification_ms_dev;
+create database medical_db_int;
+\c medical_db_int
+create user oauth2_ms_pre_prod with password 'secret';
+create schema oauth2 authorization oauth2_ms_pre_prod;
+create user healthcare_ms_pre_prod with password 'secret';
+create schema healthcare authorization healthcare_ms_pre_prod;
+create user healthcare_facility_ms_pre_prod with password 'secret';
+create schema healthcare_facility authorization healthcare_facility_ms_pre_prod;
+create user assessment_ms_pre_prod with password 'secret';
+create schema assessment authorization assessment_ms_pre_prod;
+create user notification_ms_pre_prod with password 'secret';
+create schema notification authorization notification_ms_pre_prod;
