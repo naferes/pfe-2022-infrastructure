@@ -3,64 +3,52 @@ kind: Ingress
 metadata:
   name: wellinkare-ingress
   annotations:
+    kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+  namespace: default
 spec:
   rules:
-    - host: dev.oauth.info
+    - host: dev.wellinkare.info
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - path: /(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: back-office-service-dev
+                port:
+                  number: 80
+          - path: /oauth2-ms/(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: oauth-ms-service-dev
                 port:
                   number: 2000
-    - host: dev.assessment.info
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
+          - path: /assessment-ms/(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: assessment-ms-service-dev
                 port:
                   number: 8094
-    - host: dev.config-server.info
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: config-server-service-dev
-                port:
-                  number: 2001
-    - host: dev.healthcare-facility.info
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
+          - path: /healthcare-facility-ms/(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: healthcare-facility-service-dev
                 port:
                   number: 8093
-    - host: dev.healthcare.info
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
+          - path: /healthcare-ms/(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: healthcare-service-dev
                 port:
                   number: 8092
-    - host: dev.notifications.info
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
+          - path: /notification-ms/(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: notification-service-dev

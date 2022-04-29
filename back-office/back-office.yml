@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: back-office
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: back-office
+  template:
+    metadata:
+      labels:
+        app: back-office
+    spec:
+      containers:
+      - name: back-office
+        image: 12011/back-office:dev2
+        ports:
+        - name: office-port
+          containerPort: 80
+        imagePullPolicy: Always
+        env:
+          - name: spring.cloud.config.uri
+            value: http://config-server-service-dev:2001
+          - name: spring.profiles.active
+            value: dev
