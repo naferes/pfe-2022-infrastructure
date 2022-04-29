@@ -4,11 +4,23 @@
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+To make it easy for you to get started with this project, here's a list of recommended next steps to preapre the environment.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
+### installing docker 
+1- Install docker 
+2- add the user to the docker groups 
+### installing minikube
+1- install minikube using the docker driver
+2- enabling Ingress Addons
+## PostgreSQL Database
+```
+cd existing_repo
+kubectl create -f postgres_database/
+```
+### Initializing the database 
+```
+kubectl exec -i -t medical-db -- psql -U postgres < postgres_database/postgresSchema.back
+```
 
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
 - [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
