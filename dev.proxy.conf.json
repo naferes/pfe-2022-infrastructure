@@ -1,0 +1,39 @@
+{
+    "/oauth2-ms/*": {
+      "target": "http://dev.wellicare.info/oauth2-ms",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/oauth2-ms": ""
+      }
+    },
+    "/healthcare-facility-ms/*": {
+      "target": "http://dev.wellicare.info/healthcare-facility-ms",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/healthcare-facility-ms": ""
+      }
+    },
+    "/healthcare-ms/*": {
+      "target": "http://dev.wellicare.info/healthcare-ms",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/healthcare-ms": ""
+      }
+    },
+    "/notification-ms/*": {
+      "target": "http://dev.wellicare.info/notification-ms",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/notification-ms": ""
+      }
+    }
+  }
+  
