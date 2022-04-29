@@ -25,7 +25,9 @@ kubectl exec -i -t medical-db -- psql -U postgres < postgres_database/postgresSc
 # You can use direclty the Images built my ME: Who I am i ??? ALPHAAAAAAAAAAA
 ### Config Server Image
 1- Replacing the config Repo link by your config repo link (or mine: https://gitlab.com/nferes/wellinkare-mine-config-server.git )
+
 2- Configuring maven to build images: https://www.baeldung.com/jib-dockerizing
+
 3- 
 ```
 mvn compile com.google.cloud.tools:jib-maven-plugin:2.6.0:build -Dimage=$IMAGE_PATH
