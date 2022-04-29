@@ -45,7 +45,7 @@ mvn compile com.google.cloud.tools:jib-maven-plugin:2.6.0:build -Dimage=$IMAGE_P
 docker build -t back-office:dev -f Dockerfile.dev .
 docker tag back-office:dev <your_dockerhub_username>/back-office:dev
 docker push <your_docker_hub_username>/back-office:dev
-
+```
 ## Config-server
 ```
 kubectl create -f cinfig-server/
