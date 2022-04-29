@@ -35,13 +35,16 @@ mvn compile com.google.cloud.tools:jib-maven-plugin:2.6.0:build -Dimage=$IMAGE_P
 
 ### Oauth-ms, assessment-ms, healthcare-ms, healthcare-facility-ms and notifications ms are the same
 1- Creating dokcer hub repositories
+
 2- 
 ```
 mvn compile com.google.cloud.tools:jib-maven-plugin:2.6.0:build -Dimage=$IMAGE_PATH
 ```
 ### back Office Image
 1- Adding Dockerfile.dev to the back-office root folder
+
 2- adding dev.proxy.conf.json to th root back-office folder
+
 3- 
 ```
 docker build -t back-office:dev -f Dockerfile.dev .
