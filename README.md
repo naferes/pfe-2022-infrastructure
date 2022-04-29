@@ -8,9 +8,11 @@ To make it easy for you to get started with this project, here's a list of recom
 
 ### installing docker 
 1- Install docker 
+
 2- add the user to the docker groups 
 ### installing minikube
 1- install minikube using the docker driver
+
 2- enabling Ingress Addons
 ## PostgreSQL Database
 ```
