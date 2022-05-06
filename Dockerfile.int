@@ -1,0 +1,16 @@
+#stage 1
+FROM node:12-slim as node
+WORKDIR /app
+COPY . .
+RUN cp int.proxy.conf.json src/proxy.conf.json
+RUN npm install
+RUN npm run build --prod
+#stage 2
+
+FROM nginx:latest
+RUN apt update && apt -y install nginx-extras
+COPY --from=node /app/dist/chambre-106 /var/www/
+COPY nginx.conf /etc/nginx/nginx.conf
+RUN rm /etc/nginx/sites-enabled/default
+EXPOSE 80
+ENTRYPOINT ["nginx","-g","daemon off;"]
