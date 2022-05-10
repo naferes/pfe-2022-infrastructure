@@ -130,6 +130,27 @@ helm lint notification-ms/
 helm template notification-ms/
 helm install notification-ms/
 ```
+
+## SSL/TLS Security
+```
+# Create a namespace for Cert Manager
+kubectl create namespace cert-manager
+
+# Get the Helm Chart for Cert Manager
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+
+# Install Cert Manager using Helm charts
+helm install cert-manager jetstack/cert-manager `
+    --namespace cert-manager `
+    --set installCRDs=true
+
+# Check the created Pods
+kubectl get pods --namespace cert-manager
+
+# Install the Cluster Issuer
+kubectl apply -f SSL/ssl-tls-cluster-issuer.yaml
+```
 ## Ingress
 1- Find out your minikube ip address
 ```
@@ -145,5 +166,8 @@ helm lint ingress/
 ## to check
 helm template ingress/
 helm install ingress/
+
+# Now test the app with HTTPS: https://int.wellinkare.info
+
 
 ```
